@@ -37,7 +37,7 @@ def viewresult():
     db = get_db()
     db.execute('select id, x, y, z from location')
     results = db.fetchall()
-    return '<h1>ID: {}. X: {}. Y: {}. Z: {}</h1>'.format(results[1]['id'], results[1]['x'], results[1]['y'], results[1]['z'])
+    return render_template('viewresult.html', result = results)
 
 if __name__ == '__main__':
     app.run()
