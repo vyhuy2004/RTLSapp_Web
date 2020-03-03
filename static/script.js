@@ -1,9 +1,9 @@
 $(document).ready(function(){
-  var socket = io.connect('http://127.0.0.1:5000');
+  var socket = io.connect('http://' + document.domain + ':' + location.port);
 
   socket.on('connect', function() {
       socket.send('I am now connected!');
-      socket.emit('sending_event',{'id' : 100,
+      socket.emit('sending_event',{'id' : 200,
                                     'x' : 10,
                                     'y' : 5,
                                     'z' : 100})
