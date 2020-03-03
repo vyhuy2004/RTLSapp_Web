@@ -11,7 +11,7 @@ $(document).ready(function(){
       var y = msg.y;
       var z = msg.z;
       locstring = '';
-      locstring = locstring + '<tr><td>' + id.toString() + '</td><td>' + x.toString() + '</td><td>' + y.toString() + '</td><td>' + z.toString() '</td></tr>';
+      locstring = locstring + '<tr><td>' + id.toString() + '</td><td>' + x.toString() + '</td><td>' + y.toString() + '</td><td>' + z.toString() + '</td></tr>';
       $("#log").append(locstring);
 
   });
