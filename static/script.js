@@ -10,8 +10,7 @@ $(document).ready(function(){
       var x = msg.x;
       var y = msg.y;
       var z = msg.z;
-      locstring = '';
-      locstring = locstring + '<h2>ID: ' + id.toString() + ', X:' + x.toString()+ ', Y:' + y.toString()+ ', Z:' + z.toString() + '</h2>'
+      locstring = '<tr><td>' + id.toString() + '</td><td>' + x.toString() + '</td><td>' + y.toString() + '</td><td>' + z.toString() '</td></tr>'
       $("#log").append(locstring);
 
   });
