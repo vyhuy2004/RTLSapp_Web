@@ -49,7 +49,6 @@ def receive_message(message):
 def receive_sending_event(message):
     print('ID: {}, X = {}, Y = {}, Z = {}'.format(message['id'],message['x'],message['y'],message['z']))
     socketio.emit('render_page', message)
-#{'id':1, 'x':5, 'y':6,'z':7}
 
 if __name__ == '__main__':
     socketio.run(app)
