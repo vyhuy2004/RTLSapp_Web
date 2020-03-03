@@ -3,7 +3,7 @@ $(document).ready(function(){
 
   socket.on('connect', function() {
       socket.send('I am now connected!');
-      socket.emit('sending_event',{'id' : 500,
+      socket.emit('sending_event',{'id' : 100,
                                     'x' : 10,
                                     'y' : 5,
                                     'z' : 100})
