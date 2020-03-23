@@ -21,9 +21,7 @@ $(document).ready(function(){
       var z = msg.z;
       var sol = L.latLng([ y,x ]);
       L.circleMarker(sol,{radius: 5}).addTo(map);
+      map.fitBounds(bounds);
   });
-
-
-
 
 });
