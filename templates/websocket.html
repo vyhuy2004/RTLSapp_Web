@@ -11,7 +11,10 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
   </head>
   <body>
-
+    <div class="container">
+      <div id="mapid"></div>
+      <script src="{{ url_for('static', filename='map.js') }}"></script>
+    </div>
     <div class="container" id="content">
       <div class="tableFixHead">
         <table>
@@ -22,11 +25,6 @@
           </tbody>
         </table>
       </div>
-    </div>
-
-    <div class="container">
-      <div id="mapid"></div>
-      <script src="{{ url_for('static', filename='map.js') }}"></script>
     </div>
 
     <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
