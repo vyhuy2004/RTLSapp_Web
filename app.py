@@ -41,6 +41,10 @@ def viewresult():
 def websocket():
     return render_template('websocket.html')
 
+@app.route('/map')
+def map():
+    return render_template('map.html')
+
 @socketio.on('message')
 def receive_message(message):
     print('########: {}'.format(message))
