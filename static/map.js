@@ -15,6 +15,7 @@ $(document).ready(function(){
   });
 
   socket.on('render_page', function(msg) {
+      socket.send('Map received');
       var id = msg.id;
       var x = msg.x;
       var y = msg.y;
