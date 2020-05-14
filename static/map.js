@@ -25,6 +25,8 @@ $(document).ready(function(){
   //Receive new data to render event
   socket.on('render_page', function(msg) {
       socket.send('Map received');
+      //Get message and decode image
+      $('#ItemPreview').attr('src', `data:image/jpg;base64,${msg.imgbyte}`);
       //Get message and set new point
       var id = msg.id;
       var x = msg.x;
