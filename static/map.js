@@ -18,8 +18,11 @@ $(document).ready(function(){
   //First connection event
   socket.on('connect', function() {
       socket.send('Map now connected!');
-      var sol = L.latLng([ 0,0 ]);
-      L.circleMarker(sol,{radius: 5}).addTo(map);
+// 4 corners of the map
+//      var sol = L.latLng([ 0,0 ]);
+//      var sol = L.latLng([ 0,495 ]);
+//      var sol = L.latLng([ 318,0 ]);
+//      var sol = L.latLng([ 318,495 ]);
   });
 
   //Receive new data to render event
@@ -29,8 +32,8 @@ $(document).ready(function(){
       $('#ItemPreview').attr('src', 'data:image/jpg;base64,' + msg.imgbyte);
       //Get message and set new point
       var id = msg.id;
-      var x = msg.x;
-      var y = msg.y;
+      var x = msg.x*(495/2.8);
+      var y = msg.y*(318/1.8);
       var z = msg.z;
       var sol = L.latLng([ y,x ]);
 
@@ -41,7 +44,7 @@ $(document).ready(function(){
       }
 
       //Add new location
-      current_loc = L.circleMarker(sol,{radius: 5}).addTo(map);
+      current_loc = L.circleMarker(sol,{radius: 5, fillColor: "blue",fillOpacity: 1}).addTo(map);
   });
 
 });
