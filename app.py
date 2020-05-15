@@ -53,6 +53,7 @@ def receive_message(message):
 @socketio.on('sending_event')
 def receive_sending_event(message):
     print('ID: {}, X = {}, Y = {}, Z = {}'.format(message['id'],message['x'],message['y'],message['z']))
+    print('stufF: {}'.format(message['imgbyte']))
     socketio.emit('render_page', message)
 
 if __name__ == '__main__':
