@@ -8,8 +8,8 @@ $(document).ready(function(){
   var current_loc = {};
 
   //Set bound of map image and set the view to lower left corner
-  var bounds = [[-25,-110], [720-25,1280-110]];
-  var image = L.imageOverlay('/static/Outline1.JPG', bounds).addTo(map);
+  var bounds = [[-10,-51], [338-10,600-51]];
+  var image = L.imageOverlay('/static/Outline2.jpg', bounds).addTo(map);
   map.setView( [70, 120], 1);
 
   //Connect to websocket
