@@ -36,7 +36,7 @@ $(document).ready(function(){
       var y = msg.y*(318/1.8);
       var z = msg.z;
       var sol = L.latLng([ y,x ]);
-
+      var dispStr = "Current Location" +
       //Remove old location
       if(current_loc != undefined)
       {
@@ -44,7 +44,8 @@ $(document).ready(function(){
       }
 
       //Add new location
-      current_loc = L.circleMarker(sol,{radius: 5, fillColor: "blue",fillOpacity: 1}).addTo(map);
+      current_loc = L.circleMarker(sol,{radius: 5, fillColor: "blue",fillOpacity: 1}).bindTooltip("X: "+msg.x+", Y: "+msg.y, 
+      {sticky: true}).addTo(map).openTooltip();
   });
 
 });
