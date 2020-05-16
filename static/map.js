@@ -19,7 +19,8 @@ $(document).ready(function(){
   socket.on('connect', function() {
       socket.send('Map now connected!');
 // 4 corners of the map
-//      var sol = L.latLng([ 0,0 ]);
+      var sol = L.latLng([ 0,0 ]);
+      L.circleMarker(sol,{radius: 5}).addTo(map);
 //      var sol = L.latLng([ 0,495 ]);
 //      var sol = L.latLng([ 318,0 ]);
 //      var sol = L.latLng([ 318,495 ]);
@@ -36,7 +37,7 @@ $(document).ready(function(){
       var y = msg.y*(318/1.8);
       var z = msg.z;
       var sol = L.latLng([ y,x ]);
-      var dispStr = "Current Location" +
+
       //Remove old location
       if(current_loc != undefined)
       {
@@ -44,7 +45,7 @@ $(document).ready(function(){
       }
 
       //Add new location
-      current_loc = L.circleMarker(sol,{radius: 5, fillColor: "blue",fillOpacity: 1}).bindTooltip("X: "+msg.x+", Y: "+msg.y, 
+      current_loc = L.circleMarker(sol,{radius: 5, fillColor: "blue",fillOpacity: 1}).bindTooltip("X: "+msg.x+", Y: "+msg.y,
       {sticky: true}).addTo(map).openTooltip();
   });
 
